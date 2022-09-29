@@ -16,6 +16,7 @@ let x = undefined;
 let y = undefined;
 let isdrawLine = false
 let isdrawPaint = true
+let isTouch = false
 
 drawLineBtnElm.addEventListener('click', () => {
     isdrawLine = true
@@ -49,14 +50,18 @@ decrease.addEventListener('click', () => {
 
 canvas.addEventListener('mousedown', e => {
     isPressed = true
+    isTouch = true
 
     x = e.offsetX
     y = e.offsetY
 
 })
 
+
+
 canvas.addEventListener('mouseup', e => {
     isPressed = false
+    isTouch = false
 
     x = undefined
     y = undefined
@@ -79,6 +84,26 @@ canvas.addEventListener('mousemove', (e) => {
         }
         
     }
+    
+})
+
+canvas.addEventListener('touchmove', (e) => {
+    console.log(e);
+   x2 = e.targetTouches[0].clientX - 30
+   y2 = e.targetTouches[0].clientY - 200
+
+   if(isdrawPaint){
+    drawCircle(x2, y2)
+   }
+
+   if(isdrawLine){
+    console.log('y');
+    drawLine(x, y, x2, y2)
+    x = x2
+    y = y2
+   }
+
+   
     
 })
 
