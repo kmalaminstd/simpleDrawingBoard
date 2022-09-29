@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+canvas{
+    margin: 40px;
+    border: 2px solid #000;
+}
+
+.tools{
+    width: 600px;
+    margin: 40px;
+    border: 2px solid lightgreen;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tools .firstElm{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tools .firstElm button:first-child{
+    margin-right: 10px;
+}
+
+.tools .firstElm button:last-child{
+    margin-left: 10px;
+}
+
+
+.tools button{
+    background-color: lightgreen;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: inline-block;
+    border: none;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
